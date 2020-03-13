@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#051857"
+    app:layoutDescription="@xml/motion_path_advanced"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:motionDebug="NO_DEBUG">
+
+    <TextView
+        android:id="@+id/header_text"
+        android:text="Weeeeeeee"
+        android:textSize="32sp"
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/android_gold_path"
+        android:src="@drawable/ic_android_gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/android_oranje_path"
+        android:src="@drawable/ic_android_oranje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/android_red_path"
+        android:src="@drawable/ic_android_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

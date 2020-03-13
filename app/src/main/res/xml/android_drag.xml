@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet  android:id="@+id/start">
+        <Constraint
+            android:id="@+id/android_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_oranje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <!--Middle one so no alpha-->
+    <!--"packed" chaining here means to pack views together-->
+    <!--Constrained specifically so they will be side-by-side at the end-->
+    <ConstraintSet  android:id="@+id/end">
+        <Constraint
+        android:id="@+id/android_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/android_gold"
+        app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <Constraint
+            android:id="@+id/android_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/android_green"
+            app:layout_constraintEnd_toStartOf="@id/android_red"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <!--Middle one so no alpha-->
+        <Constraint
+            android:id="@+id/android_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/android_gold"
+            app:layout_constraintEnd_toStartOf="@id/android_white"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <Constraint
+            android:id="@+id/android_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintStart_toEndOf="@id/android_red"
+            app:layout_constraintEnd_toStartOf="@id/android_oranje"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <Constraint
+            android:id="@+id/android_oranje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintStart_toEndOf="@id/android_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end">
+        <OnSwipe
+            app:touchAnchorId="@id/android_red"/>
+    </Transition>
+
+</MotionScene>

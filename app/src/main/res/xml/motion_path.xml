@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/android_gold_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_red_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Constraint
+            android:id="@+id/android_oranje_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/android_gold_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <Constraint
+            android:id="@+id/android_red_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_text"/>
+
+        <Constraint
+            android:id="@+id/android_oranje_path"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end"
+        app:duration="3500">
+        <OnClick
+            app:clickAction="toggle"/>
+
+        <KeyFrameSet>
+            <!--Gold-->
+            <KeyPosition
+                app:motionTarget="@id/android_gold_path"
+                app:keyPositionType="parentRelative"
+                app:framePosition="50"
+                app:percentX="0.5"/>
+
+            <!--Red-->
+            <KeyPosition
+                app:motionTarget="@id/android_red_path"
+                app:keyPositionType="parentRelative"
+                app:framePosition="50"
+                app:percentX="0.5"/>
+
+            <!-- Oranje -->
+            <KeyPosition
+                app:motionTarget="@id/android_oranje_path"
+                app:keyPositionType="parentRelative"
+                app:framePosition="50"
+                app:percentY="0.5"/>
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

@@ -18,4 +18,3 @@
         android:src="@drawable/doge"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
-

@@ -37,7 +37,7 @@
             motion:layout_constraintTop_toTopOf="parent">
             <CustomAttribute
                 motion:attributeName="backgroundColor"
-                motion:customColorValue="#000000"/>
+                motion:customColorValue="#F00"/>
             <CustomAttribute
                 motion:attributeName="scaleY"
                 motion:customFloatValue="2.0"/>
